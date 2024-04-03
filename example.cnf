@@ -1,0 +1,22 @@
+[req]
+# default_bits = 4096
+distinguished_name = req_distinguished_name
+req_extensions = req_ext
+prompt = no
+
+[req_distinguished_name]
+C   = UY
+L   = Montevideo
+ST  = MO
+O   = Fruta Social
+CN  = my-dev
+# OU  = R&D
+
+[req_ext]
+subjectAltName = @alt_names
+basicConstraints = critical, CA:false
+extendedKeyUsage = critical, serverAuth
+
+[alt_names]
+IP.1 = 10.1.2.3
+DNS.1 = *.my.domain
